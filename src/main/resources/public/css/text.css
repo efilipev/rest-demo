@@ -1,0 +1,44 @@
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited{
+    background-color: rgba(60, 60, 60, 0.92) !important;
+    border: 0 none!important;
+    border-radius:0!important;
+}
+
+html body {
+    background: rgba(239, 239, 239, 0.85) !important;
+
+}
+
+.teams_container{
+    display: inline-table;
+    margin: 20px;
+}
+
+.teams_container img{
+    max-width:90%;
+    max-height:90%;
+}
+
+.players_table th{
+    padding-left: 13px;
+    border-color: inherit;
+}
+.players_table td{
+    padding-left: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

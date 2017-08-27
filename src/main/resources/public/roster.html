@@ -1,0 +1,123 @@
+<head>
+	<link rel="stylesheet" href="css/players.css">
+</head>
+<div class="container"  ng-controller="rosterCtrl">
+
+	<div class="megamenu-club">
+		<div class="megamenu-club-logobar">
+			<a class="megamenu-club-logobar__logo">
+				<img ng-src="{{'src/' + teamInfo.teamNAme +'.gif'}}"/>
+			</a>
+			<a class="megamenu-club-logobar__tagline">
+				<img ng-src="{{'teamsCut/' + teamInfo.teamNAme +'.jpg'}}"/>
+			</a>
+		</div>
+	</div>
+
+	<div class="megamenu-navbar">
+		<div class="megamenu__container">
+			<nav class="megamenu-static-navbar"></nav>
+		</div>
+	</div>
+
+	<div class="hockey_team">
+		<div class="teams_container">
+			<table>
+				<tbody>
+				<tr>
+					<td>
+						<div class="teams_logo">
+							<img ng-src={{getImagePath(teamInfo.teamNAme)}}>
+						</div>
+						<div class="team_info">
+							<br><strong>{{teamInfo.marketName}}</strong><br>
+							{{teamInfo.teamNAme}}
+						</div>
+						<div class="venue_info">
+							<strong>Venue Name - </strong>
+							{{teamInfo.venueName}}
+							<br><strong>Capacity - </strong>{{teamInfo.capacity}}</br>
+							<strong>City - </strong>
+							{{teamInfo.city}},
+							{{teamInfo.country}}
+						</div>
+						<div class="league_info">
+							<strong>Conference - </strong>
+							{{teamInfo.conference}},
+							<strong>Division - </strong>
+							{{teamInfo.division}}
+							<strong>League - </strong>
+							{{teamInfo.leagueName}}
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<a class="btn btn-primary" ng-click="toggle =!toggle">
+		<span>Roster</span>
+	</a>
+
+	<div class="players_container" ng-show="toggle" >
+		<div class="template__content template--two-column__content--one" >
+			<div class="players" >
+				<table class="split-table">
+					<tbody>
+					<tr class="split-table-tr">
+						<td class="split-table-td pinned">
+							<div class="split-table-col split-table-col__pinned">
+								<table class="data-table data-table__forwards data-table__pinned">
+									<thead>
+									<tr >
+										<th class="name-col">Player</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr ng-repeat="players in teamInfo.playerModel">
+										<td class="name-col" >
+											<img ng-src="{{'/players/' + players.fullName +'.jpg'}}"/>
+											<span>{{players.fullName}}</span>
+										</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="split-table-td scrollable">
+							<div class="split-table-col split-table-col__scrollable" >
+								<table class="data-table data-table__forwards data-table__scrollable" >
+									<thead>
+									<tr>
+										<th> # </th>
+										<th> Height </th>
+										<th> Weight </th>
+										<th> Birth Date </th>
+										<th> Birth Place </th>
+										<th> Draft </th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr ng-repeat="players in teamInfo.playerModel">
+										<td>{{players.jerseyNumber}}</td>
+										<td>{{players.height}}</td>
+										<td>{{players.weight}}</td>
+										<td>{{players.birthdate}}</td>
+										<td>{{players.birthPlace}}</td>
+										<td>{{players.yearOfDraft}}</td>
+									</tr>
+									</tbody>
+
+								</table>
+							</div>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,29 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/text.css">
+</head>
+<div class="container"  ng-controller="AppCtrl">
+    <div class="nhl_logo">
+        <img src="src/NHL.gif">
+    </div>
+    <div class="panel panel-default"></div>
+    <div class="teams_container"  ng-repeat="items in imageSource">
+        <table>
+            <tbody>
+            <tr>
+                <td>
+                    <img ng-src={{getImagePath(items)}}>
+                    <br>
+                    <span>{{items}}</span>
+                    </br>
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+        <a class="btn btn-primary" href="#!/roster/{{items}}">
+            <!--<a class="btn btn-primary" ng-click="toggle =!toggle">-->
+            <span>Team Info</span>
+        </a>
+    </div>
+</div>
